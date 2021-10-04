@@ -23,7 +23,7 @@ namespace PAYE.Api.Controllers
         }
 
         [HttpPost("generate/salary")]
-        public async Task<IActionResult> GenerateResult(UserInputModel userInput)
+        public async Task<IActionResult> GenerateSalary(UserInputModel userInput)
         {
             try
             {

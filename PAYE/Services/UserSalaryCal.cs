@@ -28,9 +28,8 @@ namespace PAYE.Api.Services
         {
             return salary * rate;
         }
-        public static double PAYE(double basicsalary)
+        public static double PAYE(double salary)
         {
-             double salary = BasicSalary(basicsalary);
             if (salary >= 20000)
             {
                 return Math.Floor(ChargeableIncome(20000, salary, 0.30, 4657.25));
