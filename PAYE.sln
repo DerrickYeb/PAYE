@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAYE.Api", "PAYE\PAYE.Api.csproj", "{6A901CA1-AE45-47BC-BFBF-08D9F15AA322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayeApi.Test", "PayeApi.Test\PayeApi.Test.csproj", "{B02E160F-4746-457A-86A7-2F51955D0720}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A901CA1-AE45-47BC-BFBF-08D9F15AA322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A901CA1-AE45-47BC-BFBF-08D9F15AA322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A901CA1-AE45-47BC-BFBF-08D9F15AA322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A901CA1-AE45-47BC-BFBF-08D9F15AA322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B02E160F-4746-457A-86A7-2F51955D0720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02E160F-4746-457A-86A7-2F51955D0720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02E160F-4746-457A-86A7-2F51955D0720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02E160F-4746-457A-86A7-2F51955D0720}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E2ED680-1415-498F-891C-2F8B0DB90995}
+	EndGlobalSection
+EndGlobal
