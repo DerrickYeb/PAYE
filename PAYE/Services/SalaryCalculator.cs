@@ -15,7 +15,7 @@ namespace PAYE.Api.Services
         public Task<UserOutputModel> GenerateSalary(UserInputModel userInput,UserOutputModel userOutput)
         {
             double totalAllowances = UserSalaryCal.TotalAllowances(userInput.Allowance, userInput.OtherAllowance);
-            initialGross = (double)(userInput.NetSalary + deductions);
+            initialGross = (double)(userInput.NetSalary + totalAllowances);
              salary = initialGross * 0.5;
             employerTier1 = UserSalaryCal.TierOne(salary, Rates.EmployerFirstTier);
             employeeTier2 = UserSalaryCal.TierTwo(salary, Rates.EmployeeTierTwo);
@@ -29,8 +29,8 @@ namespace PAYE.Api.Services
             userOutput.TotalPayeTax = UserSalaryCal.PAYE(salary);
 
             userOutput.TotalAllowances = totalAllowances;
-            userOutput.GrossSalary = initialGross + deductions;
-            userOutput.BasicSalary = initialGross * 0.5;
+            userOutput.GrossSalary = initialGross;
+            userOutput.BasicSalary = salary;
 
             return Task.FromResult(userOutput);
         }
