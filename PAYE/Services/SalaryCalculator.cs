@@ -11,15 +11,16 @@ namespace PAYE.Api.Services
     {
         double employerTier1 = 0;
         double employeeTier2,deductions = 0;
-        double salary = 0;
+        double salary = 0,initialGross = 0;
         public Task<UserOutputModel> GenerateSalary(UserInputModel userInput,UserOutputModel userOutput)
         {
             double totalAllowances = UserSalaryCal.TotalAllowances(userInput.Allowance, userInput.OtherAllowance);
-            deductions = employerTier1 + employeeTier2 + UserSalaryCal.ThreeTier(salary);
-            double initialGross = (double)(userInput.NetSalary + totalAllowances);
+            initialGross = (double)(userInput.NetSalary + deductions);
              salary = initialGross * 0.5;
             employerTier1 = UserSalaryCal.TierOne(salary, Rates.EmployerFirstTier);
             employeeTier2 = UserSalaryCal.TierTwo(salary, Rates.EmployeeTierTwo);
+            deductions = employerTier1 + employeeTier2 + UserSalaryCal.ThreeTier(salary);
+
             userOutput.EmployerPensionContribution_Tier_Three = UserSalaryCal.ThreeTier(salary);
             userOutput.EmployeePensionAmount_Tier_Three = UserSalaryCal.ThreeTier(salary);
             userOutput.EmployeePensionAmount_Tier_One = 0;
@@ -28,9 +29,8 @@ namespace PAYE.Api.Services
             userOutput.TotalPayeTax = UserSalaryCal.PAYE(salary);
 
             userOutput.TotalAllowances = totalAllowances;
-            userOutput.Deductions = deductions;
-            userOutput.GrossSalary = initialGross;
-            userOutput.BasicSalary = salary;
+            userOutput.GrossSalary = initialGross + deductions;
+            userOutput.BasicSalary = initialGross * 0.5;
 
             return Task.FromResult(userOutput);
         }
