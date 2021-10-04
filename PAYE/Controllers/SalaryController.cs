@@ -33,9 +33,9 @@ namespace PAYE.Api.Controllers
                     var result = await _salary.GenerateResult(userInput,userOutput);
                     return Ok(new
                     {
-                        Data = result != null,
+                        IsSucessful = result != null,
                         Message = result != null ? "Salary Generated Successfully":"Failed to generate salary",
-                        Count = result
+                        Data = result
                     });
                 }
                 else
