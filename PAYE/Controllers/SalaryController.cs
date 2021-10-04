@@ -30,7 +30,7 @@ namespace PAYE.Api.Controllers
                 if (ModelState.IsValid)
                 {
                     UserOutputModel userOutput = new();
-                    var result = await _salary.GenerateResult(userInput,userOutput);
+                    var result = await _salary.GenerateSalary(userInput,userOutput);
                     return Ok(new
                     {
                         IsSucessful = result != null,

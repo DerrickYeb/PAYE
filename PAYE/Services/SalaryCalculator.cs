@@ -12,7 +12,7 @@ namespace PAYE.Api.Services
         double employerTier1 = 0;
         double employeeTier2,deductions = 0;
         double salary = 0;
-        public Task<UserOutputModel> GenerateResult(UserInputModel userInput,UserOutputModel userOutput)
+        public Task<UserOutputModel> GenerateSalary(UserInputModel userInput,UserOutputModel userOutput)
         {
             double totalAllowances = UserSalaryCal.TotalAllowances(userInput.Allowance, userInput.OtherAllowance);
             deductions = employerTier1 + employeeTier2 + UserSalaryCal.ThreeTier(salary);

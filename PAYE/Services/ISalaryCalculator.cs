@@ -8,6 +8,6 @@ namespace PAYE.Api.Services
 {
     public interface ISalaryCalculator
     {
-        Task<UserOutputModel> GenerateResult(UserInputModel userInput,UserOutputModel userOutput);
+        Task<UserOutputModel> GenerateSalary(UserInputModel userInput,UserOutputModel userOutput);
     }
 }
